@@ -1,0 +1,8 @@
+.dockerignore
+.gitignore
+.idea/
+.ruby-gemset
+.ruby-version
+Dockerfile
+Icon
+docker-mop.sh
