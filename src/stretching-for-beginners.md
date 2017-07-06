@@ -19,3 +19,17 @@
 ```ruby
 ["1", "2", "3", "4"].map{|i| i.to_i}.reduce(:+)
 ```
+
+**Files and Folder**
+1. Find all files ends with `.jpg`, `pdf`, `docx` or `zip` in your `Downloads` folder. Create folder `ruby-testfu` and copy all found files. into it.
+```ruby
+Dir.chdir ENV["HOME"] + "/Downloads"
+files = []
+%w{*.jpg *.pdf *.docx *.zip }.each do |file|
+  files += Dir[file]
+end
+files
+Dir.mkdir "ruby-testfu"
+files.each {|file| FileUtils.cp file, "ruby-testfu"}
+Dir["ruby-testfu/*"]
+```
